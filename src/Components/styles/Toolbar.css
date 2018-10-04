@@ -1,0 +1,33 @@
+/*Toolbar*/
+.navbar {
+  min-height: 10vh;
+  background-color: rgb(0, 0, 0);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  color: rgb(174, 223, 255);
+  font-size: 32px;
+  font-weight: 1000;
+}
+
+.navbar-nav {
+  margin-left: 15px;
+}
+
+.nav-link {
+  padding: 15px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: rgb(174, 223, 255);
+}
+
+.nav-link:hover {
+  color: rgb(0, 102, 197);
+  text-decoration: underline;
+}

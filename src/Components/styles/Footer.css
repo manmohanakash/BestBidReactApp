@@ -1,0 +1,16 @@
+.footer-copyright {
+  font-size: 18px;
+  min-height: 10vh;
+  padding: 10px 0px 10px 0px;
+  color: black;
+  border-top: 1px solid black;
+}
+
+.footer-copyright > a {
+  text-decoration: underline;
+  color: blue;
+}
+
+.footer-copyright > a:hover {
+  color: rgb(11, 136, 252);
+}

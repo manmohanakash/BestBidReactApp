@@ -1,0 +1,22 @@
+.addProject > table {
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #000000;
+  border-collapse: separate !important;
+  border-radius: 10px;
+}
+
+table {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addProject > table > tr {
+  text-align: right;
+}
+
+.addProject > table > tr > td:first-child {
+  font-weight: 800;
+  margin-top: 0;
+  width: 20%;
+}

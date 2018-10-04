@@ -1,0 +1,35 @@
+.container {
+  min-height: 80vh;
+  background-color: #e6fbff;
+  color: Black;
+  padding: 10px;
+}
+
+h1 {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+h2 {
+  margin: 10px 0px 0px 15px;
+  font-weight: 600;
+}
+
+h4 {
+  margin: 10px 0px 0px 50px;
+}
+
+a {
+  text-decoration: underline;
+  color: rgb(44, 44, 252);
+}
+
+a:hover {
+  color: rgb(15, 213, 248);
+}
+
+.technology img {
+  margin-left: 15px;
+}

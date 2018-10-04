@@ -1,0 +1,55 @@
+.projectCard > table {
+  border-collapse: separate;
+  width: 80%;
+  border: 5px solid rgb(5, 22, 59);
+  background-color: rgb(5, 22, 59);
+  border-radius: 10px;
+  font-weight: 900;
+  color: black;
+  -moz-border-radius: 6px;
+}
+
+/* Every Row */
+.projectCard > table > tr {
+  border-collapse: collapse;
+  border-collapse: collapse;
+}
+
+/* Odd row */
+.projectCard > table > tr:nth-of-type(odd) {
+  background-color: rgb(174, 223, 255);
+}
+
+/* All boxes */
+.projectCard > table > tr > td {
+  border-collapse: collapse;
+  margin: 0px;
+  padding: 10px;
+}
+
+/* Even row */
+.projectCard > table > tr:nth-of-type(even) {
+  background-color: rgb(255, 255, 255);
+}
+
+/* Odd row 
+.projectCard > table > tr:nth-of-type(odd) {
+  background-color: rgb(89, 122, 194);
+}*/
+
+/*All rows first Coloumn*/
+.projectCard > table > tr > td:first-child {
+  text-align: center;
+}
+
+/* First Coloumn in even 
+.projectCard > table > tr:nth-of-type(even) > td:first-child {
+  text-align: right;
+  border-right: 2px solid rgb(89, 122, 194);
+}*/
+
+/* First Coloumn in odd row
+.projectCard > table > tr:nth-of-type(odd) > td:first-child {
+  text-align: right;
+}
+*/
