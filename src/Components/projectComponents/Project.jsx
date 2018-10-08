@@ -138,7 +138,6 @@ class Project extends Component {
         { withCredentials: true }
       )
       .then(res => {
-        console.log(res);
         if (res.data.type === "fail") {
           this.setState({
             message: res.data.message,
@@ -155,6 +154,7 @@ class Project extends Component {
             () => this.fetchData()
           );
         }
+        alert(res.data.message);
       });
   }
 

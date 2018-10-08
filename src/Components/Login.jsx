@@ -126,7 +126,6 @@ class Login extends Component {
           this.setState({
             message: res.data.message,
             messageSet: true,
-            message: res.data.message,
             isLoading: false,
             redirect: true
           });

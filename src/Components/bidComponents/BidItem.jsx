@@ -15,11 +15,7 @@ class BidItem extends Component {
         <td>{bid.bidAmount}</td>
         <td>{bid.bidAt}</td>
         <td>
-          <Link
-            className="btn btn-info"
-            to={"/project/" + bid.projectId}
-            target="_blank"
-          >
+          <Link className="btn btn-info" to={"/project/" + bid.projectId}>
             SEE PROJECT
           </Link>
         </td>
@@ -29,7 +25,6 @@ class BidItem extends Component {
             onClick={() => {
               this.deleteBid(bid.bidId);
             }}
-            target="_blank"
           >
             DELETE BID
           </button>

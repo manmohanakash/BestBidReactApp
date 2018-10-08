@@ -32,93 +32,85 @@ class Projects extends Component {
   render() {
     let projects = this.state.projects;
 
-    {
-      if (projects.length == 0)
-        return (
-          <div>
-            <h1>EMPTY</h1>
-          </div>
-        );
-      else if (this.state.isLoading) return <Loading />;
-      else
-        return (
-          <div className="myProjects ">
-            <Toolbar
-              isLogged={this.props.isLogged}
-              setLoggedOut={this.props.setLoggedOut.bind(this)}
-            />
-            <div className="container ">
-              <h1>ALL PROJECTS</h1>
-              <Pagination
-                currentPage={this.state.currentPage}
-                totalPages={this.state.totalPages}
-                changePage={this.changePage.bind(this)}
-                changeToPreviousPage={this.changeToPreviousPage.bind(this)}
-                changeToNextPage={this.changeToNextPage.bind(this)}
-              />
-              <div className="projectList">
-                <div className="selection" align="center">
-                  &nbsp;&nbsp;&nbsp;SORT BY&nbsp;
-                  <select
-                    value={this.state.sort}
-                    onChange={this.changeSortBy.bind(this)}
-                  >
-                    <option value="createdAt" default>
-                      CREATED AT
-                    </option>
-                    <option value="projectId">PROJECT ID</option>
-                    <option value="projectName">NAME</option>
-                    <option value="description">DESCRIPTION</option>
-                    <option value="maximumBudget">MAXIMUM BUDGET</option>
-                    <option value="createdAt">CREATED TIME</option>
-                    <option value="deadline">DEADLINE</option>
-                    <option value="totalBids">TOTAL BIDS</option>
-                  </select>
-                  &nbsp;&nbsp;&nbsp;ORDER&nbsp;
-                  <select
-                    value={this.state.order}
-                    onChange={this.changeOrder.bind(this)}
-                  >
-                    <option value="asc">ASCENDING</option>
-                    <option value="desc">DESCENDING</option>
-                  </select>
-                  &nbsp;&nbsp;&nbsp; SIZE&nbsp;
-                  <select
-                    value={this.state.size}
-                    onChange={this.changePageSize.bind(this)}
-                  >
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select>
-                  &nbsp;&nbsp;&nbsp;PAGE:&nbsp;
-                  {this.state.currentPage + 1}
-                  &nbsp;of&nbsp;
-                  {this.state.totalPages} &nbsp;of&nbsp;
-                  {this.state.totalItems}
-                </div>
-                <table align="center" className="mt-3">
-                  <th>Project ID</th>
-                  <th>NAME</th>
-                  <th>DESCRIPTION</th>
-                  <th>MAXIMUM BUDGET</th>
-                  <th>CURRENT MIN BID</th>
-                  <th>CREATED AT</th>
-                  <th>DEADLINE</th>
-                  <th>TOTAL BIDS</th>
-                  <th>VIEW</th>
-                  {projects.map(project => (
-                    <ProjectItem key={project.projectsId} project={project} />
-                  ))}
-                </table>
-              </div>
+    return (
+      <div className="myProjects ">
+        <Toolbar
+          isLogged={this.props.isLogged}
+          setLoggedOut={this.props.setLoggedOut.bind(this)}
+        />
+        <div className="container ">
+          <h1>ALL PROJECTS</h1>
+          <div className="projectList">
+            <div className="selection mb-2 " align="center">
+              &nbsp;&nbsp;&nbsp;SORT BY&nbsp;
+              <select
+                value={this.state.sort}
+                onChange={this.changeSortBy.bind(this)}
+              >
+                <option value="createdAt" default>
+                  CREATED AT
+                </option>
+                <option value="projectId">PROJECT ID</option>
+                <option value="projectName">NAME</option>
+                <option value="description">DESCRIPTION</option>
+                <option value="maximumBudget">MAXIMUM BUDGET</option>
+                <option value="createdAt">CREATED TIME</option>
+                <option value="deadline">DEADLINE</option>
+                <option value="totalBids">TOTAL BIDS</option>
+              </select>
+              &nbsp;&nbsp;&nbsp;ORDER&nbsp;
+              <select
+                value={this.state.order}
+                onChange={this.changeOrder.bind(this)}
+              >
+                <option value="asc">ASCENDING</option>
+                <option value="desc">DESCENDING</option>
+              </select>
+              &nbsp;&nbsp;&nbsp; SIZE&nbsp;
+              <select
+                value={this.state.size}
+                onChange={this.changePageSize.bind(this)}
+              >
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>{" "}
+              &nbsp;&nbsp;&nbsp;PAGE:&nbsp;
+              {this.state.currentPage + 1}
+              &nbsp;of&nbsp;
+              {this.state.totalPages}
+              &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;TOTAL PROJECTS:&nbsp;
+              {this.state.totalItems}
             </div>
-            <Footer />
+            <Pagination
+              currentPage={this.state.currentPage}
+              totalPages={this.state.totalPages}
+              changePage={this.changePage.bind(this)}
+              changeToPreviousPage={this.changeToPreviousPage.bind(this)}
+              changeToNextPage={this.changeToNextPage.bind(this)}
+            />
+            <table align="center" className="mt-3">
+              <th>Project ID</th>
+              <th>NAME</th>
+              <th>DESCRIPTION</th>
+              <th>MAXIMUM BUDGET</th>
+              <th>CURRENT MIN BID</th>
+              <th>CREATED AT</th>
+              <th>DEADLINE</th>
+              <th>TOTAL BIDS</th>
+              <th>VIEW</th>
+              {projects.map(project => (
+                <ProjectItem key={project.projectsId} project={project} />
+              ))}
+            </table>
+            {this.state.isLoading && <Loading />}
           </div>
-        );
-    }
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
   fetchData() {
@@ -127,7 +119,7 @@ class Projects extends Component {
     console.log(this.state);
 
     let url =
-      "http://localhost:8080/getProductsByPage?page=" +
+      "http://localhost:8080/getProjects?page=" +
       this.state.currentPage +
       "&size=" +
       this.state.size +
@@ -143,6 +135,7 @@ class Projects extends Component {
       this.setState({
         projects: response.data.content,
         totalPages: response.data.totalPages,
+        page: response.data.pageable.page,
         totalItems: response.data.total,
         isLoading: false
       });

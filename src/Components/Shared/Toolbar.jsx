@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { styles } from "../styles/Toolbar.css";
 
@@ -32,7 +31,7 @@ class Toolbar extends Component {
                 </Link>
               </li>
               <li className="nav-item ">
-                <Link className="nav-link" to="/myProjects" Disabled>
+                <Link className="nav-link" to="/myProjects">
                   My Projects
                 </Link>
               </li>

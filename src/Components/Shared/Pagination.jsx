@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 
 class Pagination extends Component {
-  state = {
-    currentPage: this.props.currentPage,
-    totalPages: this.props.totalPages
-  };
+  state = {};
 
   render() {
+    console.log(this.props);
+
     let pageArray = [];
-    let currentPage = this.state.currentPage;
-    let totalPages = this.state.totalPages;
+    let currentPage = this.props.currentPage;
+    let totalPages = this.props.totalPages;
 
     let start = 0;
     let end = totalPages;
@@ -20,7 +19,6 @@ class Pagination extends Component {
     if (totalPages > start + 10) {
       totalPages = start + 10;
     }
-
     for (let i = start; i < end; i++) {
       pageArray.push(i);
     }

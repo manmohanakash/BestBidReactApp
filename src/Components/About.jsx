@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { styles } from "./styles/About.css";
-import { Link } from "react-router-dom";
 
 import angular from "./images/angular.png";
 import springboot from "./images/spring-boot.png";
@@ -23,11 +22,10 @@ class About extends Component {
           <br />
           <h2>ABOUT:</h2>
           <h4>
-            The website is a part of a personal project. The source code for the
-            website can be found on{" "}
-            <Link to="https://github.com/manmohanakash" target="_blank">
+            The source code can be found on{" "}
+            <a href="https://github.com/manmohanakash" target="_blank">
               github
-            </Link>
+            </a>
             .
           </h4>
           <br />
@@ -36,15 +34,25 @@ class About extends Component {
             <h2>TECHNOLOGY STACK:</h2>
             <h4>
               SERVER : SPRINGBOOT
-              <img src={springboot} height="30px" width="90px" />{" "}
+              <img
+                src={springboot}
+                alt={"SpringBoot Icon"}
+                height="30px"
+                width="90px"
+              />{" "}
             </h4>
             <h4>
               FRONTEND : ANGULAR
-              <img src={angular} height="30px" width="90px" />
+              <img
+                src={angular}
+                alt={"ANGULAR Icon"}
+                height="30px"
+                width="90px"
+              />
             </h4>
             <h4>
               DATABASE : MySQL
-              <img src={mysql} height="30px" width="90px" />
+              <img src={mysql} alt={"MySQL Icon"} height="30px" width="90px" />
             </h4>
           </div>
         </div>

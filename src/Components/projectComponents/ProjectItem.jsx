@@ -6,6 +6,7 @@ class ProjectItem extends Component {
   state = {};
   render() {
     let project = this.props.project;
+
     return (
       <tr>
         <td>{project.projectId}</td>
